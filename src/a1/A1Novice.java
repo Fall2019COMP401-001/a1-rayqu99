@@ -39,7 +39,7 @@ public class A1Novice {
 				for (int i=0; i<=ArrayNumbers-1; i++) {
 					FinalPrice += TotalPrice[i];
 				}
-				DecimalFormat df = new DecimalFormat("#.00");
+				DecimalFormat df = new DecimalFormat("0.00");
 				String s = df.format(FinalPrice);
 				String FirstNameInitial = FirstName.substring(0,1);
 				System.out.println(FirstNameInitial + ". " + LastName + ": "+ s);

@@ -2,6 +2,10 @@ package a1;
 
 import java.util.Scanner;
 
+import java.math.RoundingMode;
+
+import java.text.DecimalFormat;
+
 public class A1Novice {
 
 	public static void main(String[] args) {
@@ -9,6 +13,9 @@ public class A1Novice {
 		Scanner sc = new Scanner(System.in);
 		
 		int CustomerNumber = sc.nextInt();
+
+
+		
 		
 		for (int d=0; d<CustomerNumber; d++) {			
 		
@@ -32,10 +39,9 @@ public class A1Novice {
 				for (int i=0; i<=ArrayNumbers-1; i++) {
 					FinalPrice += TotalPrice[i];
 				}
-		
-
+				DecimalFormat df2 = new DecimalFormat("#.##");
 				String FirstNameInitial = FirstName.substring(0,1);
-				System.out.println(FirstNameInitial + ". " + LastName + ": "+ FinalPrice);
+				System.out.println(FirstNameInitial + ". " + LastName + ": "+ df2.format(FinalPrice));
 		}
 	}
 }

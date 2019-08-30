@@ -27,16 +27,18 @@ public class A1Adept {
 			int []    ItemNumber3 = new int[ItemNumber2];
 			String [] ItemName2   = new String[ItemNumber2];
 			System.out.println(FirstName[i]+" "+LastName[i]);
+			double [] TotalPrices = new double[ItemNumber2];
 			for (int m=0; m<=ItemNumber2-1 ; m++) {
 				ItemNumber3[m] = sc.nextInt();
 				ItemName2 [m]  = sc.next();
-				for (int b=0; b<=ItemNumber-1; b++) {
-					if (ItemName2 [m] == ItemNames [b]) {
-						double TotalPrice = ItemNumber3[m] * ItemPrices[b];
-						System.out.println(ItemName2[m] + " " + TotalPrice);
-						break;}
-						}
-					}
-				}
-			}	       						
+				for (int i1=0; i1<=ItemNumber-1; i1++) {
+					    boolean result = ItemName2[m].equals(ItemNames[i1]);
+					    if (result) {TotalPrices[m] = ItemNumber3[m] * ItemPrices[i1];}
+				         }}
+			double FinalPrice = 0;
+			for (int n=0; n<=ItemNumber2-1;n++) {
+					FinalPrice += TotalPrices[n];}
+				System.out.println(FinalPrice);			
+	    }	       						
 	}
+}

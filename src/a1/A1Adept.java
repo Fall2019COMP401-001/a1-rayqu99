@@ -41,18 +41,13 @@ public class A1Adept {
 	    }
 		
 		DecimalFormat df = new DecimalFormat("0.00");
-		String [] FinalPriceRounded2   = new String [CustomerNumber];
-		double []    FinalPriceRounded = new double    [CustomerNumber];
-		for (int i=0; i<=CustomerNumber-1 ; i++) {
-			FinalPriceRounded2 [i] = df.format(FinalPrice[i]);
-			FinalPriceRounded [i] = Double.parseDouble(FinalPriceRounded2[i]);
-		}
-		double MaxFP = FinalPriceRounded[0];
+
+		double MaxFP = FinalPrice[0];
 		String MaxFirstName = FirstName[0];
 		String MaxLastName =  LastName[0];
 		for (int j=0; j<CustomerNumber-1; j++) {
-			if (FinalPriceRounded[j]<FinalPriceRounded[j+1]) {
-				MaxFP = FinalPriceRounded[j+1];
+			if (FinalPrice[j]<FinalPrice[j+1]) {
+				MaxFP = FinalPrice[j+1];
 				MaxFirstName = FirstName[j+1];
 				MaxLastName = LastName[j+1];
 			}
@@ -63,12 +58,12 @@ public class A1Adept {
 		}else {
 		System.out.println("Biggest: "+MaxFirstName+" "+MaxLastName+" ("+MaxFP2+")");}
 		
-		double MinFP = FinalPriceRounded[0];
+		double MinFP = FinalPrice[0];
 		String MinFirstName = FirstName[0];
 		String MinLastName =  LastName[0];
 		for (int j=0; j<CustomerNumber-1; j++) {
-			if (FinalPriceRounded[j]>FinalPriceRounded[j+1]) {
-				MinFP = FinalPriceRounded[j+1];
+			if (FinalPrice[j]>FinalPrice[j+1]) {
+				MinFP = FinalPrice[j+1];
 				MinFirstName = FirstName[j+1];
 				MinLastName = LastName[j+1];
 			}

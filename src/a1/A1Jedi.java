@@ -20,7 +20,6 @@ public class A1Jedi {
 		int CustomerNumber    = sc.nextInt();
 		String [] FirstName   = new String[CustomerNumber];
 		String [] LastName    = new String[CustomerNumber];
-		double [] FinalPrice  = new double[CustomerNumber];
 
 		for (int i=0; i<=CustomerNumber-1 ; i++) {
 			FirstName[i]      = sc.next();
@@ -29,17 +28,12 @@ public class A1Jedi {
 			int []    ItemNumberEachBought = new int[ItemNumberBought];
 			String [] ItemNameBought   = new String[ItemNumberBought];
 			double [] TotalPrices = new double[ItemNumberBought];
+			System.out.println(FirstName[i]+" "+LastName[i]);
 			for (int m=0; m<=ItemNumberBought-1 ; m++) {
 				ItemNumberEachBought[m] = sc.nextInt();
 				ItemNameBought [m]  = sc.next();
-				for (int i1=0; i1<=ItemNumber-1; i1++) {
-					    boolean result = ItemNameBought[m].equals(ItemName[i1]);
-					    if (result) {TotalPrices[m] = ItemNumberEachBought[m] * ItemPrices[i1];}
-				         }
-				}
-			for (int n=0; n<=ItemNumberBought-1;n++) {
-					FinalPrice[i] += TotalPrices[n];
-				  }		
+				System.out.println(ItemNameBought[m]+" "+ItemNumberEachBought[m]);
+			}
 	    }
-	}
+  }
 }

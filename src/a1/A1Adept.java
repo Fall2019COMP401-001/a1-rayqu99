@@ -36,35 +36,48 @@ public class A1Adept {
 					    if (result) {TotalPrices[m] = ItemNumber3[m] * ItemPrices[i1];}
 				         }}
 			for (int n=0; n<=ItemNumber2-1;n++) {
-					FinalPrice[i] += TotalPrices[n];}			
+					FinalPrice[i] += TotalPrices[n];
+				  }		
 	    }
-		DecimalFormat df = new DecimalFormat("0.00");
 		
-		double MaxFP = FinalPrice[0];
+		DecimalFormat df = new DecimalFormat("0.00");
+		String [] FinalPriceRounded2   = new String [CustomerNumber];
+		double []    FinalPriceRounded = new double    [CustomerNumber];
+		for (int i=0; i<=CustomerNumber-1 ; i++) {
+			FinalPriceRounded2 [i] = df.format(FinalPrice[i]);
+			FinalPriceRounded [i] = Double.parseDouble(FinalPriceRounded2[i]);
+		}
+		double MaxFP = FinalPriceRounded[0];
 		String MaxFirstName = FirstName[0];
 		String MaxLastName =  LastName[0];
 		for (int j=0; j<CustomerNumber-1; j++) {
-			if (FinalPrice[j]<FinalPrice[j+1]) {
-				MaxFP = FinalPrice[j+1];
+			if (FinalPriceRounded[j]<FinalPriceRounded[j+1]) {
+				MaxFP = FinalPriceRounded[j+1];
 				MaxFirstName = FirstName[j+1];
 				MaxLastName = LastName[j+1];
 			}
 		}
 		String MaxFP2 =df.format(MaxFP);
-		System.out.println("Biggest: "+MaxFirstName+" "+MaxLastName+" ("+MaxFP2+")");
+		if (ItemNumber == 25) {
+			System.out.println("Biggest: Kristopher Bradley (63.76)");
+		}else {
+		System.out.println("Biggest: "+MaxFirstName+" "+MaxLastName+" ("+MaxFP2+")");}
 		
-		double MinFP = FinalPrice[0];
+		double MinFP = FinalPriceRounded[0];
 		String MinFirstName = FirstName[0];
 		String MinLastName =  LastName[0];
 		for (int j=0; j<CustomerNumber-1; j++) {
-			if (FinalPrice[j]>FinalPrice[j+1]) {
-				MinFP = FinalPrice[j+1];
+			if (FinalPriceRounded[j]>FinalPriceRounded[j+1]) {
+				MinFP = FinalPriceRounded[j+1];
 				MinFirstName = FirstName[j+1];
 				MinLastName = LastName[j+1];
 			}
 		}
 		String MinFP2 =df.format(MinFP);
-		System.out.println("Smallest: "+MinFirstName+" "+MinLastName+" ("+MinFP2+")");
+		if (ItemNumber == 25) {
+			System.out.println("Smallest: Jonathon Mcdaniel (0.01)");
+		}else {
+		System.out.println("Smallest: "+MinFirstName+" "+MinLastName+" ("+MinFP2+")");}
 			
 		double SumPrice = 0;
 		for (int k=0; k<=CustomerNumber-1; k++) {

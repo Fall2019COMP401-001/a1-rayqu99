@@ -28,11 +28,17 @@ public class A1Jedi {
 			int []    ItemNumberEachBought = new int[ItemNumberBought];
 			String [] ItemNameBought   = new String[ItemNumberBought];
 			double [] TotalPrices = new double[ItemNumberBought];
-			System.out.println(FirstName[i]+" "+LastName[i]);
 			for (int m=0; m<=ItemNumberBought-1 ; m++) {
 				ItemNumberEachBought[m] = sc.nextInt();
 				ItemNameBought [m]  = sc.next();
-				System.out.println(ItemNameBought[m]+" "+ItemNumberEachBought[m]);
+			}
+			int [] ItemNumber4EveryItem = new int [ItemNumber];
+			for (int n=0; n<=ItemNumber-1;n++) {
+				for (int j=0; j<=ItemNumberBought-1; j++) {
+					boolean result = ItemName[n].equals(ItemNameBought[j]);
+					if (result) { ItemNumber4EveryItem [n] += ItemNumberEachBought[j];}					
+					}
+			System.out.println(ItemName[n]+" "+ItemNumber4EveryItem[n]);
 			}
 	    }
   }

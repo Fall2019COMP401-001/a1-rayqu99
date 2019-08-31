@@ -2,8 +2,6 @@ package a1;
 
 import java.util.Scanner;
 
-import java.math.RoundingMode;
-
 import java.text.DecimalFormat;
 
 public class A1Novice {
@@ -44,5 +42,6 @@ public class A1Novice {
 				String FirstNameInitial = FirstName.substring(0,1);
 				System.out.println(FirstNameInitial + ". " + LastName + ": "+ s);
 		}
+		sc.close();
 	}
 }

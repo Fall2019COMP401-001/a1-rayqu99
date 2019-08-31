@@ -1,6 +1,5 @@
 package a1;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class A1Jedi {
@@ -58,5 +57,6 @@ public class A1Jedi {
 			}
 			else {System.out.println(CustomerNumberIndicator[i]+" customers bought "+ItemNumberIndicator[i]+" "+ItemName[i]);}
 		}
+		sc.close();
   }
 }

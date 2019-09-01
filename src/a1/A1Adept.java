@@ -45,34 +45,34 @@ public class A1Adept {
 		double MaxFP = FinalPrice[0];
 		String MaxFirstName = FirstName[0];
 		String MaxLastName =  LastName[0];
+		int MaxIndicator =0;
 		for (int j=0; j<CustomerNumber-1; j++) {
-			if (FinalPrice[j]<FinalPrice[j+1]) {
-				MaxFP = FinalPrice[j+1];
-				MaxFirstName = FirstName[j+1];
-				MaxLastName = LastName[j+1];
+			if (FinalPrice[MaxIndicator]<FinalPrice[j+1]) {
+				MaxIndicator++;
 			}
 		}
+		MaxFP = FinalPrice[MaxIndicator];
+		MaxFirstName = FirstName[MaxIndicator];
+		MaxLastName = LastName[MaxIndicator];
 		String MaxFP2 =df.format(MaxFP);
-		if (ItemNumber == 25) {
-			System.out.println("Biggest: Kristopher Bradley (63.76)");
-		}else {
-		System.out.println("Biggest: "+MaxFirstName+" "+MaxLastName+" ("+MaxFP2+")");}
+
+		System.out.println("Biggest: "+MaxFirstName+" "+MaxLastName+" ("+MaxFP2+")");
 		
 		double MinFP = FinalPrice[0];
 		String MinFirstName = FirstName[0];
 		String MinLastName =  LastName[0];
+		int MinIndicator =0;
 		for (int j=0; j<CustomerNumber-1; j++) {
-			if (FinalPrice[j]>FinalPrice[j+1]) {
-				MinFP = FinalPrice[j+1];
-				MinFirstName = FirstName[j+1];
-				MinLastName = LastName[j+1];
+			if (FinalPrice[MinIndicator]>FinalPrice[j+1]) {
+				MinIndicator++;
 			}
 		}
+		MinFP = FinalPrice[MinIndicator];
+		MinFirstName = FirstName[MinIndicator];
+		MinLastName = LastName[MinIndicator];
 		String MinFP2 =df.format(MinFP);
-		if (ItemNumber == 25) {
-			System.out.println("Smallest: Jonathon Mcdaniel (0.01)");
-		}else {
-		System.out.println("Smallest: "+MinFirstName+" "+MinLastName+" ("+MinFP2+")");}
+
+		System.out.println("Smallest: "+MinFirstName+" "+MinLastName+" ("+MinFP2+")");
 			
 		double SumPrice = 0;
 		for (int k=0; k<=CustomerNumber-1; k++) {
